@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D055DEC4-A28D-40D8-B53F-D3FFB240F25B}</ProjectGuid>
+    <ProjectGuid>{E4DD01D3-17C5-4CD0-A5DC-EE39431C39DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OBJECT_TO_XML</RootNamespace>
-    <AssemblyName>OBJECT-TO-XML</AssemblyName>
+    <RootNamespace>OBJECT_TO_SOAP</RootNamespace>
+    <AssemblyName>OBJECT-TO-SOAP</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,11 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Eco.Handles, Version=7.0.0.12229, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.12229\lib\net40\Eco.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Interfaces, Version=7.0.0.12229, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.12229\lib\net40\Eco.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.LinqExtender, Version=7.0.0.12229, Culture=neutral, PublicKeyToken=46a833be9e90de8c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EcoCore.7.0.0.12229\lib\net40\Eco.LinqExtender.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,15 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Community.cs" />
-    <Compile Include="Currency.cs" />
-    <Compile Include="CurrencyEnvelope.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="Oneshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SOAPEnvelope.cs" />
+    <Compile Include="SOAPEnvelopeResponse.cs" />
+    <Compile Include="StepList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyXml.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
